@@ -1,19 +1,25 @@
 class Monitor{
-    private String monitersize;
+    private String monitorsize;
     private String color;
     private String power;
 
-    Monitor(String monitersize, String color, String power){
-        this.monitersize = monitersize;
+    Monitor(String monitorsize, String color, String power){
+        this.monitorsize = monitorsize;
         this.color = color;
         this.power = power;
     }
 
-    public String getmonitersize(){return this.monitersize;}
-    public String getcolor(){return this.color;}
-    public String getpower(){return this.power;}
-}
+    public void turnon() {
+        System.out.println("Turning on the monitor.");
+    }
 
+    public void printinfo() {
+        System.out.println("The spec of the monitor\n"+
+        " Size: " + monitorsize +'\n' +
+        " Color: " + color + '\n' +
+        " Power: " + power  );
+    }
+}
 class Computer{
     private String cpu;
     private String memory;
@@ -29,14 +35,19 @@ class Computer{
         this.power = power;
     }
 
-    public String getcpu(){return this.cpu;}
-    public String getmemory(){return this.memory;}
-    public String gethd(){return this.hd;}
-    public String getcolor(){return this.color;}
-    public String getpower(){return this.power;}
+    public void turnon() {
+        System.out.println("Turning on the computer.");
+    }
 
+    public void printinfo() {
+        System.out.println("The spec of the computer\n"+
+        " CPU: " + cpu + '\n'+
+        " Memory: " + memory + '\n'+
+        " HDD: " + hd + '\n'+
+        " Color: " + color + '\n'+
+        " Power: " + power  );
+    }
 }
-
 class PersonalComputer{    
     private Monitor monitor;
     private Computer computer;
@@ -48,23 +59,13 @@ class PersonalComputer{
     }
 
     public void turnon(){
-        System.out.println("Turning on the computer");
-        System.out.println("Turning on the monitor");
+        monitor.turnon();
+        computer.turnon();
     }
 
     public void printinfo(){
-        System.out.println(
-        "The spec of the computer\n" + 
-        "CPU: "+computer.getcpu() + "\n" +
-        "Memory: "+computer.getmemory() + "\n" +
-        "HD: "+computer.gethd() + "\n" +
-        "Color: "+computer.getcolor() + "\n" +
-        "Power: "+computer.getpower() + "\n" +
-        "The spec of the moniter"+ "\n" +
-        "Size: "+monitor.getmonitersize() + "\n" +
-        "Color: "+monitor.getcolor() + "\n" +
-        "Power: "+monitor.getpower()
-        );
+        monitor.printinfo();
+        computer.printinfo();
     }
 }
 
