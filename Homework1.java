@@ -9,5 +9,6 @@ public class Homework1 {
             sum += num;
             System.out.printf("현재까지 입력된 정수의 합은 %d입니다.\n",sum);
         }
+        sc.close();
     }
 }

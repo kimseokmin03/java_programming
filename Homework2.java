@@ -24,7 +24,7 @@ class student{
     }
 }
 
-public class Homework {
+public class Homework2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         student[] students = new student[3];
